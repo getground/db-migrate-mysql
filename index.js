@@ -514,11 +514,13 @@ exports.connect = function (config, intern, callback) {
   type = internals.mod.type;
 
   internals.interfaces.SeederInterface._makeParamArgs = dummy;
+  
+  const { driver, ...connectionOptions } = config;
 
   if (typeof mysql.createConnection === 'undefined') {
-    db = config.db || mysql.createClient(config);
+    db = config.db || mysql.createClient(connectionOptions);
   } else {
-    db = config.db || mysql.createConnection(config);
+    db = config.db || mysql.createConnection(connectionOptions);
   }
 
   db.connect(function (err) {
