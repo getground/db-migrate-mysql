@@ -1,7 +1,7 @@
 {
-  "name": "db-migrate-mysql",
+  "name": "@gground/db-migrate-mysql",
   "version": "2.2.0",
-  "description": "db-migrate mysql driver",
+  "description": "getground forked version of db-migrate mysql driver",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
